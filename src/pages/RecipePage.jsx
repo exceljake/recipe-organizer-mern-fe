@@ -5,11 +5,12 @@ function RecipePage() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedRecipe, setSelectedRecipe] = useState(null); // ✅ state for modal
+  const API_BASE_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const res = await fetch("http://localhost:3001/api/recipes");
+        const res = await fetch(`${API_BASE_URL}/api/recipes`);
         const result = await res.json();
         setRecipes(result.data);
       } catch (err) {
@@ -30,7 +31,7 @@ function RecipePage() {
     if (!confirmDelete) return;
 
     try {
-      await fetch(`http://localhost:3001/api/recipes/${id}`, {
+      await fetch(`${API_BASE_URL}/api/recipes/${id}`, {
         method: "DELETE",
       });
       setRecipes((prev) => prev.filter((r) => r._id !== id)); // ✅ using _id

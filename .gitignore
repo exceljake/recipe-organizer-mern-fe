@@ -39,7 +39,7 @@ lerna-debug.log*
 .LSOverride
 
 # Local environment
-.env
+.env.local
 
 # Optional cache files
 .cache/
