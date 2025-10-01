@@ -12,7 +12,7 @@ import api from "./axios";
 
 export const fetchRecipes = async ({ page = 1, limit = 12 } = {}) => {
   const res = await api.get("/recipes", { params: { page, limit } });
-  return res.data; // expect { recipes: [...], meta: {...} }
+  return res.data; 
 };
 
 export const fetchRecipe = async (id) => {

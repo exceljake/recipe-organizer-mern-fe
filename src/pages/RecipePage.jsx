@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 function RecipePage() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedRecipe, setSelectedRecipe] = useState(null); // ✅ state for modal
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
   const API_BASE_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
